@@ -1,0 +1,31 @@
+{
+   "name": "pivlu/sample-package",
+   "description": "A sample package for Pivlu.",
+   "type": "library",
+   "version": "1.0.0",
+   "authors": [
+      {
+         "name": "Chimilevschi Iosif-Gabriel",
+         "email": "office@pivlu.com"
+      }
+   ],
+   "require": {
+      "php": "^8.2",      
+      "illuminate/support": "12.*",
+      "illuminate/console": "12.*",
+      "illuminate/database": "12.*",
+      "illuminate/routing": "12.*"
+   },
+   "autoload": {
+      "psr-4": {
+         "Pivlu\\SamplePackage\\": "src/"
+      }
+   },
+   "extra": {
+      "laravel": {
+         "providers": [
+            "Pivlu\\SamplePackage\\SamplePackageServiceProvider"
+         ]
+      }
+   }
+}
