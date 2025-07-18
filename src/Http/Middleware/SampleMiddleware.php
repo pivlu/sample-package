@@ -5,7 +5,7 @@ namespace Pivlu\SamplePackage\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Response;
 
-class ExampleMiddleware
+class SampleMiddleware
 {
    public function handle($request, Closure $next)
    {

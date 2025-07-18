@@ -8,7 +8,7 @@ use Pivlu\SamplePackage\Console\Commands\SampleCommand;
 use Pivlu\SamplePackage\Http\Middleware\SampleMiddleware;
 
 
-class MyPackageServiceProvider extends ServiceProvider
+class SamplePackageServiceProvider extends ServiceProvider
 {
    
    public function boot()
@@ -52,8 +52,8 @@ class MyPackageServiceProvider extends ServiceProvider
    {
       // Merge configuration.
       $this->mergeConfigFrom(
-         __DIR__ . '/config/my-package.php',
-         'my-package'
+         __DIR__ . '/config/sample-package.php',
+         'sample-package'
       );
    }
 }

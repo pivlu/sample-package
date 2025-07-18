@@ -10,6 +10,6 @@ class SampleController extends Controller
    public function index()
    {
       $greeting = config('sample-package.greeting');
-      return view('sample-package::example', compact('greeting'));
+      return view('sample-package::sample', compact('greeting'));
    }
 }
