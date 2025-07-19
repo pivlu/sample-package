@@ -4,13 +4,14 @@ namespace Pivlu\SamplePackage;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
+use App\Models\Package;
 use Pivlu\SamplePackage\Console\Commands\SampleCommand;
 use Pivlu\SamplePackage\Http\Middleware\SampleMiddleware;
 
 
 class SamplePackageServiceProvider extends ServiceProvider
 {
-   
+      
    public function boot()
    {
       // Register our package's middleware.
@@ -18,7 +19,7 @@ class SamplePackageServiceProvider extends ServiceProvider
 
       // Publish configuration file.
       $this->publishes([
-         __DIR__ . '/config/sample-package.php' => config_path('sample-package.php'),
+         __DIR__ . '/config/sample-package.php' => config_path('pivlu/sample-package.php'),
       ], 'config');
 
       // Register migrations.
@@ -32,7 +33,7 @@ class SamplePackageServiceProvider extends ServiceProvider
 
       // Publish assets.
       $this->publishes([
-         __DIR__ . '/resources/assets/' => public_path('packages/sample-package'),
+         __DIR__ . '/resources/assets/' => public_path('packages/pivlu/sample-package'),
       ], 'assets');
 
       // Publish assets.
@@ -46,6 +47,8 @@ class SamplePackageServiceProvider extends ServiceProvider
             SampleCommand::class,
          ]);
       }
+
+      Package::install('pivlu/sample-package');
    }
 
    public function register()
