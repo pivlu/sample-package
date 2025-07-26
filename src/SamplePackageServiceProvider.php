@@ -5,6 +5,7 @@ namespace Pivlu\SamplePackage;
 use Illuminate\Support\ServiceProvider;
 use Pivlu\SamplePackage\Console\Commands\SampleCommand;
 use Pivlu\SamplePackage\Http\Middleware\SampleMiddleware;
+use App\Models\Plugin;
 
 class SamplePackageServiceProvider extends ServiceProvider
 {
@@ -44,7 +45,7 @@ class SamplePackageServiceProvider extends ServiceProvider
       ], 'views');  // <- The tag ("views") is defined here will be used in `php artisan vendor:publish --tag=views` command.
 
       // Add package in database
-      \App\Models\Plugin::install(self::PLUGIN_VENDOR . '/' . self::PLUGIN_NAME);
+      Plugin::install('pivlu/forms'); // "vendor/package"
 
       if ($this->app->runningInConsole()) {
          // Register commands.
